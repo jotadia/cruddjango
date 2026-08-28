@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Lista de Usuarios - Biblioteca Virtual{% endblock %}
+{% block content %}
+<ul>
+    {% for usuario in usuarios %}
+        <li>{{ usuario.nombre }} - ({{ usuario.correo }}) <a href="{% url 'detalle_usuario' usuario.id %}">detalle</a></li>
+    {% empty %}
+        No hay usuarios registrados
+    {% endfor %}
+</ul>
+{% endblock %}

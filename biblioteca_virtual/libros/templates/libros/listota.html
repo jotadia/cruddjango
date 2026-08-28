@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}Lista de Libros - Biblioteca Virtual{% endblock %}
+{% block content %}
+<ul>
+    {% for libro in libros %}
+        <li>{{ libro.titulo }} - ({{ libro.autor }}) <a href="{% url 'detalle_libro' libro.id %}">detalle</a></li>
+    {% empty %}
+        No hay usuarios registrados
+    {% endfor %}
+</ul>
+{% endblock %}

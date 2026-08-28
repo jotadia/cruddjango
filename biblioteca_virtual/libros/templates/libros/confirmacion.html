@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Confirmación - Biblioteca Virtual{% endblock %}
+{% block content %}
+    <h4>¡Registro Exitoso!</h4>
+    <p>El libro ha sido registrado correctamente en el sistema.</p>
+    <h4>Datos del Libro Registrado</h4>
+    <p><b>titulo:</b> {{ libro.titulo }}</p>
+    <p><b>Autor:</b> {{ libro.autor }}</p>
+    <p><b>Descripcion:</b> {{ libro.descripcion }}</p>
+    <p><b>Fecha de publicacion:</b> {{ libro.fecha_publicacion|date:"d/m/Y" }}</p>
+    <p><b>Estado:
+        {% if libro.disponible %}
+        ✅
+        {% else %}
+        🚫
+        {% endif %}
+    </p>
+    <p><a href="{% url 'registrar_libro' %}">Registrar otro libro</a></p>
+{% endblock %}

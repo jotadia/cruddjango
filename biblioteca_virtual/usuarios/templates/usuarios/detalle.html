@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Detalle usuario - Biblioteca Virtual{% endblock %}
+{% block content %}
+
+<h1>{{ usuario.nombre }}</h1>
+<h2>{{ usuario.correo }}</h2>
+<p>Se registró el {{ usuario.fecha_registro }} y su status es 
+    {% if usuario.activo %}
+    ✅
+    {% else %}
+    🚫
+    {% endif %}
+    </p>
+{% endblock %}
